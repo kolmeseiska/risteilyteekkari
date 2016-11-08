@@ -1,4 +1,5 @@
 import { Map } from 'immutable';
+import initialState from './initialState';
 
 const actionTypes = {
   addBadge: 'actionTypes.addBadge'
@@ -12,10 +13,6 @@ const badgeActions = {
     }
   }
 };
-
-const initialState = Map({
-  badges: Map()
-});
 
 const badgeReducer = (state = initialState, action) => {
   switch(action.type){
