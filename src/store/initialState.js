@@ -1,8 +1,7 @@
 import { Map, List } from 'immutable';
 
 const initialState = Map({
-  badgeCount: 0,
-  collected: List(),
+  collected: 0,
   badges: Map({
     0: {
       name: "The Charmer",
