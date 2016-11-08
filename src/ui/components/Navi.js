@@ -5,17 +5,23 @@ import NaviTab from './NaviTab';
 const Navi = ({item}) => {
   return (
     <View style={ styles.Navi } >
+      <NaviTab />
+      <NaviTab />
     </View>
   );
-}
+};
 
 Navi.propTypes = {
-  item: PropTypes.object
+
 };
 
 const styles = StyleSheet.create({
   Navi: {
     flexDirection: 'row',
-    backgroundColor: '#FEC606'
+    backgroundColor: '#FEC606',
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0
   }
 });

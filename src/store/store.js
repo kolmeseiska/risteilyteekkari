@@ -1,29 +1,10 @@
-import { Map } from 'immutable';
-import initialState from './initialState';
+import { combineReducers, createStore } from 'redux';
+import badges from './badges';
+import route from './route';
 
-const actionTypes = {
-  obtainBadge: 'actionTypes.obtainBadge'
-};
+const reducer = combineReducers(
+  badges,
+  route
+);
 
-const badgeActions = {
-  obtainBadge(badgeId){
-    return {
-      type: actionTypes.obtainBadge,
-      payload: badgeId
-    }
-  }
-};
-
-const badgeReducer = (state = initialState, action) => {
-  switch(action.type){
-    case actionTypes.obtainBadge:
-      return state.updateIn(['badges', action.payload, 'achieved'], true)
-        .update('collected', state.get('collected') + 1);
-    case 2:
-      return;
-    default:
-      return state;
-  }
-};
-
-export default badgeReducer;
+export default createStore(reducer);

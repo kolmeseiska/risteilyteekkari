@@ -1,8 +1,8 @@
-import { Map, List } from 'immutable';
+import { fromJS } from 'immutable';
 
-const initialState = Map({
+const badgeState = fromJS({
   collected: 0,
-  badges: Map({
+  badges: {
     0: {
       name: "The Charmer",
       description: "So your smile melts the hearts of the opposite sex? Display a pair of panties belonging to the opposite sex to a member of 37",
@@ -57,7 +57,7 @@ const initialState = Map({
       achieved: false,
       icon: 'placeholder'
     }
-  })
+  }
 });
 
-export default initialState;
+export default badgeState;
