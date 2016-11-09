@@ -1,11 +1,28 @@
-import React, { Component } from 'react';
+import React, { PropTypes } from 'react';
 import { StyleSheet, View } from 'react-native';
+import Navi from './ui/components/Navi';
+import BadgeView from './ui/BadgeView';
 
-
-const App = () => {
+const App = ({ routes, badges }) => {
   return (
-    <Provider store={store}>
-
-    </Provider>
+    <View>
+    <Navi routes={ routes } />
+    <BadgeView badges={badges} />
+    </View>
   );
 }
+
+App.propTypes = {
+  routes: PropTypes.object,
+  badges: PropTypes.object
+};
+
+const styles = StyleSheet.create({
+
+})
+
+export default connect(
+  (state, props) => ({
+    route: state.routes,
+    badges: state.badges
+  }))(App);
