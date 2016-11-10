@@ -5,9 +5,9 @@ import BadgeView from './ui/BadgeView';
 
 const App = ({ routes, badges }) => {
   return (
-    <View>
-    <Navi routes={ routes } />
-    <BadgeView badges={badges} />
+    <View style={ styles.app } >
+      <Navi routes={ routes } />
+    <BadgeView badges={ badges } />
     </View>
   );
 }
@@ -23,6 +23,6 @@ const styles = StyleSheet.create({
 
 export default connect(
   (state, props) => ({
-    route: state.routes,
+    routes: state.routes,
     badges: state.badges
   }))(App);
