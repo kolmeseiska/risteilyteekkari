@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import { StyleSheet, View } from 'react-native';
+import { connect } from 'react-redux';
 import Navi from './ui/components/Navi';
 import BadgeView from './ui/BadgeView';
 
@@ -18,7 +19,10 @@ App.propTypes = {
 };
 
 const styles = StyleSheet.create({
-
+  app: {
+    flexDirection: 'column',
+    flex: 1
+  }
 })
 
 export default connect(

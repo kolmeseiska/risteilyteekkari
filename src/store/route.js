@@ -24,7 +24,7 @@ export function switchTab(){
   }
 };
 
-const routeReducer = (state = initialState, action) => {
+function routeReducer(state = initialState, action) {
   switch(action.type){
     case actionTypes.pushRoute:
     case actionTypes.popRoute:

@@ -7,8 +7,9 @@
 import React, { Component } from 'react';
 import { AppRegistry } from 'react-native';
 import { createStore } from 'redux';
-import { provider } from 'react-redux';
-import store from './store/store';
+import { Provider } from 'react-redux';
+import App from './src/App';
+import store from './src/store/store';
 
 export default class Risteilyteekkari extends Component {
   render() {
@@ -19,14 +20,5 @@ export default class Risteilyteekkari extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  }
-});
 
 AppRegistry.registerComponent('Risteilyteekkari', () => Risteilyteekkari);

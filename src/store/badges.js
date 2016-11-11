@@ -13,7 +13,7 @@ const badgeActions = {
   }
 };
 
-const badgeReducer = (state = initialState, action) => {
+function badgeReducer(state = initialState, action) {
   switch(action.type){
     case actionTypes.obtainBadge:
       return state.updateIn(['badges', action.payload, 'achieved'], true)
