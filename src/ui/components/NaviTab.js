@@ -5,7 +5,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 const NaviTab = ({item}) => {
   return (
     <TouchableOpacity style={ styles.NaviTab } >
-      <Text style={ styles.NaviTabLabel }> TODO </Text>
+      <Text style={ styles.NaviTabLabel }> { item.get('label') || 'TODO' } </Text>
     </TouchableOpacity>
   );
 }
@@ -17,10 +17,12 @@ NaviTab.propTypes = {
 const styles = StyleSheet.create({
   NaviTab: {
     flex: 1,
-    height: 50
+    height: 50,
+    justifyContent: 'space-around'
   },
   NaviTabLabel: {
     color: '#2f2f2f',
+    fontWeight: '900',
     justifyContent: 'space-around',
     textAlign: 'center'
   }

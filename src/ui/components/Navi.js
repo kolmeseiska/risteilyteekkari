@@ -1,18 +1,25 @@
 import React, { PropTypes } from 'react';
 import { View, StyleSheet} from 'react-native';
+import { connect } from 'react-redux';
 import NaviTab from './NaviTab';
 
-const Navi = ({item}) => {
+const Navi = ({ routes }) => {
+  console.log(routes);
+  const navigationItems = routes.get('views') || false;
+  
   return (
     <View style={ styles.Navi } >
-      <NaviTab />
-      <NaviTab />
+    { navigationItems &&
+      navigationItems.toArray().map((item, i) => {
+        return <NaviTab key={i} item={ item } />
+      })
+    }
     </View>
   );
 };
 
 Navi.propTypes = {
-
+  routes: PropTypes.object
 };
 
 const styles = StyleSheet.create({
@@ -27,4 +34,7 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Navi;
+export default connect(
+  (state, props) => ({
+    routes: state.route
+  }))(Navi);
